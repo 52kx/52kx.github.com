@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: true,
+    pangu: true,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="完整教程在ECMASCRIPT 6 入门 新的变量声明方式let和const 与 var 不同，新的变量声明方式带来了一些不一样的特性，其中最重要的两个特性就是提供了块级作用域与不再具备变量提升  let 主要特征 不存在变量提升的问题，只有定义之后才能使用 有块级作用域{ }  const 主要特征 const 定义为常量，无法被重新赋值 定义常量，必须初始化，否则会报错 不存在变量提升的问题，">
+<meta name="keywords" content="es6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6基础">
+<meta property="og:url" content="https:&#x2F;&#x2F;52kx.github.io&#x2F;2019&#x2F;04&#x2F;11&#x2F;ES6%E5%9F%BA%E7%A1%80&#x2F;index.html">
+<meta property="og:site_name" content="水染天颜">
+<meta property="og:description" content="完整教程在ECMASCRIPT 6 入门 新的变量声明方式let和const 与 var 不同，新的变量声明方式带来了一些不一样的特性，其中最重要的两个特性就是提供了块级作用域与不再具备变量提升  let 主要特征 不存在变量提升的问题，只有定义之后才能使用 有块级作用域{ }  const 主要特征 const 定义为常量，无法被重新赋值 定义常量，必须初始化，否则会报错 不存在变量提升的问题，">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-23T07:28:07.966Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://52kx.github.io/2019/04/11/ES6%E5%9F%BA%E7%A1%80/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>ES6基础 | 水染天颜</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">水染天颜</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>时间轴</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://52kx.github.io/2019/04/11/ES6%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="skx">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="水染天颜">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ES6基础
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-04-11 02:02:13" itemprop="dateCreated datePublished" datetime="2019-04-11T02:02:13+08:00">2019-04-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-23 15:28:07" itemprop="dateModified" datetime="2019-10-23T15:28:07+08:00">2019-10-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>完整教程在<a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">ECMASCRIPT 6 入门</a></p>
+<h2 id="新的变量声明方式let和const"><a href="#新的变量声明方式let和const" class="headerlink" title="新的变量声明方式let和const"></a>新的变量声明方式<code>let</code>和<code>const</code></h2><blockquote>
+<p>与 var 不同，新的变量声明方式带来了一些不一样的特性，其中最重要的两个特性就是提供了块级作用域与不再具备变量提升</p>
+</blockquote>
+<h3 id="let-主要特征"><a href="#let-主要特征" class="headerlink" title="let 主要特征"></a><code>let</code> 主要特征</h3><ul>
+<li>不存在变量提升的问题，只有定义之后才能使用</li>
+<li>有块级作用域<code>{ }</code></li>
+</ul>
+<h3 id="const-主要特征"><a href="#const-主要特征" class="headerlink" title="const 主要特征"></a><code>const</code> 主要特征</h3><ul>
+<li>const 定义为常量，<strong>无法被重新赋值</strong></li>
+<li>定义常量，必须初始化，否则会报错</li>
+<li>不存在变量提升的问题，只有定义之后才能使用</li>
+<li>有块级作用域<code>{ }</code></li>
+</ul>
+<h2 id="变量的结构赋值"><a href="#变量的结构赋值" class="headerlink" title="变量的结构赋值"></a>变量的结构赋值</h2><blockquote>
+<p>所谓的解构赋值，就是把 某个对象中的属性，当作变量，给解放出来，这样，今后就能够当作变量直接使用了</p>
+</blockquote>
+<p>可以使用 <code>:</code> 为解构出来的变量重命名</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name: <span class="string">'xsyd'</span>,</span><br><span class="line">  age: <span class="number">23</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> &#123; <span class="attr">name</span>: myname, age &#125; = person</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(myname) <span class="comment">// xsyd</span></span><br><span class="line"><span class="built_in">console</span>.log(age) <span class="comment">// 23</span></span><br><span class="line"><span class="built_in">console</span>.log(name) <span class="comment">// name is not defined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="keyword">let</span> [a, b, c] = arr</span><br><span class="line"><span class="built_in">console</span>.log(a, b, c) <span class="comment">// 1 2 3</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><blockquote>
+<p>箭头函数，本质上就是一个匿名函数</p>
+</blockquote>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">形式参数 =&gt; &#123;</span><br><span class="line">    函数体代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="箭头函数的特征"><a href="#箭头函数的特征" class="headerlink" title="箭头函数的特征"></a>箭头函数的特征</h3><p>箭头函数内部的<code>this</code>, 永远和箭头函数外部的<code>this</code>保持一致</p>
+<h3 id="箭头函数变体"><a href="#箭头函数变体" class="headerlink" title="箭头函数变体"></a>箭头函数变体</h3><p>如果箭头函数，左侧的形参列表中，只有一个参数，则，左侧小括号可以省略</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports.add = <span class="function"><span class="params">x</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> x + <span class="number">10</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果右侧函数体中，只有一行代码，则，右侧的 <code>{ }</code> 可以省略</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports.add = <span class="function">(<span class="params">x, y</span>) =&gt;</span> <span class="keyword">return</span> x + y</span><br></pre></td></tr></table></figure>
+
+<p>如果箭头函数左侧 只有一个 形参，而且右侧只有一行代码，则 两边的 <code>()</code> 和 <code>{}</code> 都可以省略</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports.add = <span class="function"><span class="params">x</span> =&gt;</span> x + <span class="number">10</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>：如果我们省略了 右侧函数体的 <code>{ }</code>，那么，默认会把 右侧函数体中代码的执行结果，当作箭头函数的调用结果 return 出去</p>
+<h2 id="为函数参数指定默认值"><a href="#为函数参数指定默认值" class="headerlink" title="为函数参数指定默认值"></a>为函数参数指定默认值</h2><p>之前我们不能直接为函数指定默认参数，因此很多时候为了保证传入的参数具备一个默认值，我们常常使用如下的方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x = x || <span class="number">20</span></span><br><span class="line">  <span class="keyword">var</span> y = y || <span class="number">30</span></span><br><span class="line">  <span class="keyword">return</span> x + y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这种方式并不是没有缺点，比如当我传入一个 x 值为 false，这个时候任然会取到默认值，就不是我们的本意了。es6 新增函数参数默认值写法:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x = <span class="number">20</span>, y = <span class="number">30</span></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x + y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="展开运算符"><a href="#展开运算符" class="headerlink" title="展开运算符 ..."></a>展开运算符 <code>...</code></h2><blockquote>
+<p><strong>展开语法</strong>(Spread syntax), 可以在函数调用/数组构造时, 将数组表达式或者 string 在语法层面展开；还可以在构造字面量对象时, 将对象表达式按 key-value 的方式展开</p>
+</blockquote>
+<h3 id="在函数调用时使用展开语法"><a href="#在函数调用时使用展开语法" class="headerlink" title="在函数调用时使用展开语法"></a>在函数调用时使用展开语法</h3><p>等价于<code>apply</code>的方式<br>如果想将数组元素迭代为函数参数，一般使用 Function.prototype.apply 的方式进行调用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">x, y, z</span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> args = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">myFunction.apply(<span class="literal">null</span>, args)</span><br></pre></td></tr></table></figure>
+
+<p>有了展开语法，可以这样写：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">x, y, z</span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> args = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">myFunction(...args)</span><br></pre></td></tr></table></figure>
+
+<h3 id="在-new-表达式中应用"><a href="#在-new-表达式中应用" class="headerlink" title="在 new 表达式中应用"></a>在 new 表达式中应用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dateFields = [<span class="number">1970</span>, <span class="number">0</span>, <span class="number">1</span>] <span class="comment">// 1970年1月1日</span></span><br><span class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>（... dateFields）</span><br></pre></td></tr></table></figure>
+
+<h3 id="构造字面量数组时使用展开语法"><a href="#构造字面量数组时使用展开语法" class="headerlink" title="构造字面量数组时使用展开语法"></a>构造字面量数组时使用展开语法</h3><p>没有展开语法的时候，只能组合使用 <code>push</code>，<code>splice</code>，<code>concat</code> 等方法，来将已有数组元素变成新数组的一部分。有了展开语法, 通过字面量方式, 构造新数组会变得更简单、更优雅：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> parts = [<span class="string">'shoulders'</span>, <span class="string">'knees'</span>]</span><br><span class="line"><span class="keyword">var</span> lyrics = [<span class="string">'head'</span>, ...parts, <span class="string">'and'</span>, <span class="string">'toes'</span>] <span class="comment">// ["head", "shoulders", "knees", "and", "toes"]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="拷贝数组"><a href="#拷贝数组" class="headerlink" title="拷贝数组"></a>拷贝数组</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="keyword">var</span> arr2 = [...arr] <span class="comment">// like arr.slice()</span></span><br><span class="line">arr2.push(<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// arr2 此时变成 [1, 2, 3, 4]</span></span><br><span class="line"><span class="comment">// arr 不受影响</span></span><br><span class="line"><span class="comment">// 执行的是浅拷贝（只遍历一层）</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="构造字面量对象时使用展开语法"><a href="#构造字面量对象时使用展开语法" class="headerlink" title="构造字面量对象时使用展开语法"></a>构造字面量对象时使用展开语法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123; <span class="attr">foo</span>: <span class="string">'bar'</span>, <span class="attr">x</span>: <span class="number">42</span> &#125;</span><br><span class="line"><span class="keyword">var</span> obj2 = &#123; <span class="attr">foo</span>: <span class="string">'baz'</span>, <span class="attr">y</span>: <span class="number">13</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> clonedObj = &#123; ...obj1 &#125;</span><br><span class="line"><span class="comment">// 克隆后的对象: &#123; foo: "bar", x: 42 &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> mergedObj = &#123; ...obj1, ...obj2 &#125;</span><br><span class="line"><span class="comment">// 合并后的对象: &#123; foo: "baz", x: 42, y: 13 &#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Spread_syntax" target="_blank" rel="noopener">MDN</a> 文档</p>
+<br>
+
+<h2 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/template_strings" target="_blank" rel="noopener">MDN</a></p>
+<blockquote>
+<p>模板字符串使用反引号来代替普通字符串中的用双引号和单引号。模板字符串可以包含特定语法（${expression}）的占位符。占位符中的表达式和周围的文本会一起传递给一个默认函数，该函数负责将所有的部分连接起来，如果一个模板字符串由表达式开头，则该字符串被称为带标签的模板字符串，该表达式通常是一个函数，它会在模板字符串处理后被调用，在输出最终结果前，你都可以通过该函数来对模板字符串进行操作处理。在模版字符串内使用反引号时，需要在它前面加转义符（\）。</p>
+</blockquote>
+<h3 id="多行字符串"><a href="#多行字符串" class="headerlink" title="多行字符串"></a>多行字符串</h3><p>在新行中插入的任何字符都是模板字符串中的一部分，使用普通字符串，你可以通过以下的方式获得多行字符串：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'string text line 1\n'</span> + <span class="string">'string text line 2'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>要获得同样效果的多行字符串，使用模板字符串只需使用如下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">`string text line 1</span></span><br><span class="line"><span class="string">string text line 2`</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="插入表达式"><a href="#插入表达式" class="headerlink" title="插入表达式"></a>插入表达式</h3><p>在普通字符串中嵌入表达式，必须使用如下语法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">5</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="number">10</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Fifteen is '</span> + (a + b) + <span class="string">' and\nnot '</span> + (<span class="number">2</span> * a + b) + <span class="string">'.'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>现在通过模板字符串，我们可以使用一种更优雅的方式来表示：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">5</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="number">10</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`Fifteen is <span class="subst">$&#123;a + b&#125;</span> and</span></span><br><span class="line"><span class="string">not <span class="subst">$&#123;<span class="number">2</span> * a + b&#125;</span>.`</span>)</span><br></pre></td></tr></table></figure>
+
+<p>注意:</p>
+<ol>
+<li>如果使用模版字符串表示多行字符串，所有的空格和缩进都会被保存在输出中！！</li>
+<li>在<code>${}</code>中的大括号里可以放入任意的 JavaScript 表达式，还可以进行运算，以及引用对象属性。</li>
+<li>模版字符串<code>${}</code>中还可以调用函数</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/es6/" rel="tag"># es6</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/02/26/yarn%E6%9B%B4%E6%8D%A2%E4%B8%BA%E9%98%BF%E9%87%8C%E6%BA%90/" rel="next" title="yarn更换为阿里源">
+                  <i class="fa fa-chevron-left"></i> yarn更换为阿里源
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2019/07/07/react-webpack-eslint/" rel="prev" title="create-react-app 自定义 eslint">
+                  create-react-app 自定义 eslint <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#新的变量声明方式let和const"><span class="nav-text">新的变量声明方式let和const</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#let-主要特征"><span class="nav-text">let 主要特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const-主要特征"><span class="nav-text">const 主要特征</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量的结构赋值"><span class="nav-text">变量的结构赋值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#箭头函数"><span class="nav-text">箭头函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#箭头函数的特征"><span class="nav-text">箭头函数的特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#箭头函数变体"><span class="nav-text">箭头函数变体</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为函数参数指定默认值"><span class="nav-text">为函数参数指定默认值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#展开运算符"><span class="nav-text">展开运算符 ...</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在函数调用时使用展开语法"><span class="nav-text">在函数调用时使用展开语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在-new-表达式中应用"><span class="nav-text">在 new 表达式中应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造字面量数组时使用展开语法"><span class="nav-text">构造字面量数组时使用展开语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#拷贝数组"><span class="nav-text">拷贝数组</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造字面量对象时使用展开语法"><span class="nav-text">构造字面量对象时使用展开语法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模板字符串"><span class="nav-text">模板字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#多行字符串"><span class="nav-text">多行字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入表达式"><span class="nav-text">插入表达式</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="skx"
+    src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">skx</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">skx</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      element.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+
+  
+
+  
+
+    </div>
+</body>
+</html>

@@ -207,7 +207,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://52kx.github.io/2019/11/05/abc/">
+    <link itemprop="mainEntityOfPage" href="https://52kx.github.io/2019/09/12/git%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -221,7 +221,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/11/05/abc/" class="post-title-link" itemprop="url">abc</a>
+            <a href="/2019/09/12/git%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">git 学习笔记</a>
         </h1>
 
         <div class="post-meta">
@@ -230,18 +230,24 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-11-05 22:12:33 / 修改时间：22:13:38" itemprop="dateCreated datePublished" datetime="2019-11-05T22:12:33+08:00">2019-11-05</time>
+              <time title="创建时间：2019-09-12 02:02:13" itemprop="dateCreated datePublished" datetime="2019-09-12T02:02:13+08:00">2019-09-12</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-22 10:09:35" itemprop="dateModified" datetime="2019-10-22T10:09:35+08:00">2019-10-22</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
                   </a>
                 </span>
             </span>
@@ -257,7 +263,88 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h1><h2 id="sangezhuag"><a href="#sangezhuag" class="headerlink" title="sangezhuag"></a>sangezhuag</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> b = <span class="number">20</span></span><br></pre></td></tr></table></figure>
+          <h2 id="将目录初始化-git-可管理的仓库"><a href="#将目录初始化-git-可管理的仓库" class="headerlink" title="将目录初始化 git 可管理的仓库"></a>将目录初始化 git 可管理的仓库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
+
+<h2 id="git-首次拉取远程仓库代码"><a href="#git-首次拉取远程仓库代码" class="headerlink" title="git 首次拉取远程仓库代码"></a>git 首次拉取远程仓库代码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> xxx</span><br></pre></td></tr></table></figure>
+
+<h2 id="将代码提交到暂存区"><a href="#将代码提交到暂存区" class="headerlink" title="将代码提交到暂存区"></a>将代码提交到暂存区</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git add ./README.md <span class="comment"># 将当前目录下的README.md 提交到暂存区</span></span><br><span class="line">$ git add -A <span class="comment"># 将所有文件提交到暂存区</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="git-首次拉取远程仓库指定分支代码"><a href="#git-首次拉取远程仓库指定分支代码" class="headerlink" title="git 首次拉取远程仓库指定分支代码"></a>git 首次拉取远程仓库指定分支代码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从xxx拉取dev分支的代码</span></span><br><span class="line">$ git <span class="built_in">clone</span> -b dev xxx</span><br></pre></td></tr></table></figure>
+
+<h2 id="查看当前的状态"><a href="#查看当前的状态" class="headerlink" title="查看当前的状态"></a>查看当前的状态</h2><p>可以用来查看当前代码有没有被放到仓储中去</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br></pre></td></tr></table></figure>
+
+<h2 id="查看日志"><a href="#查看日志" class="headerlink" title="查看日志"></a>查看日志</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> <span class="comment"># 查看历史提交的日志</span></span><br><span class="line"></span><br><span class="line">$ git <span class="built_in">log</span> --oneline <span class="comment">#可以看到简洁版的日志</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git reset --hard Head~0 <span class="comment"># 表示回退到上一次代码提交时的状态</span></span><br><span class="line"></span><br><span class="line">$ git reset --hard Head~1 <span class="comment"># 表示回退到上上次代码提交时的状态</span></span><br><span class="line"></span><br><span class="line">$ git reset --hard [版本号] <span class="comment"># 可以通过版本号精确的回退到某一次提交时的状态</span></span><br><span class="line"></span><br><span class="line">$ git reflog <span class="comment"># 可以看到每一次切换版本的记录,可以看到所有提交的版本号</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><p>查看分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br></pre></td></tr></table></figure>
+
+<p>创建分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch dev <span class="comment"># 创建dev分支</span></span><br></pre></td></tr></table></figure>
+
+<p>切换分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout dev <span class="comment"># 切换到dev分支</span></span><br></pre></td></tr></table></figure>
+
+<p>创建并切换分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b dev <span class="comment"># 创建并切换到dev分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#相当于执行下面的两条命令</span></span><br><span class="line">$ git branch dev</span><br><span class="line">$ git checkout dev</span><br></pre></td></tr></table></figure>
+
+<p>合并分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git merge dev <span class="comment"># 将dev分支合并到master</span></span><br></pre></td></tr></table></figure>
+
+<p>删除分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -d dev <span class="comment"># 删除已经合并的dev分支</span></span><br><span class="line">$ git branch -D dev <span class="comment"># 强制删除未合并的分支</span></span><br></pre></td></tr></table></figure>
+
+<p>删除远端分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin :branchName</span><br><span class="line"><span class="comment"># git 1.7 之后</span></span><br><span class="line">$ git push origin --delete &lt;branchName&gt;</span><br></pre></td></tr></table></figure>
+
+<p>重命名本地分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -m oldbranch newbranch</span><br></pre></td></tr></table></figure>
+
+<h2 id="Git-如何在不提交当前分支的情况下切换到其它分支进行操作"><a href="#Git-如何在不提交当前分支的情况下切换到其它分支进行操作" class="headerlink" title="Git 如何在不提交当前分支的情况下切换到其它分支进行操作"></a>Git 如何在不提交当前分支的情况下切换到其它分支进行操作</h2><ol>
+<li>首先将当前分支修改的内容通过 git add 提交到暂存区 然后使用 git stash 命令将当前分支存储起来</li>
+<li>然后我们执行 git status 命令， 显示没有东西需要提交， 这时我们可以切换到其它分支</li>
+<li>其它分支修改完毕后， 我们切换回来， 使用 git stash list 查看存储列表，注意前面的 stash@{0} 后面将用得到</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git stash list</span><br><span class="line">stash@&#123;0&#125;: WIP on dev: 8826ea2 s</span><br></pre></td></tr></table></figure>
+
+<p>使用以下命令恢复</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash apply stash@&#123;0&#125; <span class="comment"># stash中的此条内容不会删除，需要使用 git stash drop stash@&#123;0&#125; 删除</span></span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash pop stash@&#123;0&#125; <span class="comment"># stash中的此条内容将被删除</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="查看当前的远程库"><a href="#查看当前的远程库" class="headerlink" title="查看当前的远程库"></a>查看当前的远程库</h2><p>要查看当前配置有哪些远程仓库，可以用 git remote 命令，它会列出每个远程库的简短名字。在克隆完某个项目后，至少可以看到一个名为 origin 的远程库，Git 默认使用这个名字来标识你所克隆的原始仓库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git remote</span><br><span class="line">origin</span><br></pre></td></tr></table></figure>
+
+<p>也可以加上 -v 选项（译注：此为 –verbose 的简写，取首字母），显示对应的克隆地址：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git remote -v</span><br><span class="line">origin	git@github.com:love201314/vuex-demo.git (fetch)</span><br><span class="line">origin	git@github.com:love201314/vuex-demo.git (push)</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h2><p>要添加一个新的远程仓库，可以指定一个简单的名字，以便将来引用，运行 <code>git remote add [shortname] [url]</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add github git@github.com:love201314/vuex-demo.git <span class="comment"># 关联 github</span></span><br><span class="line">$ git remote add gitee git@gitee.com:love201314/vuex-demo.git <span class="comment"># 关联码云</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="推送数据到远程仓库"><a href="#推送数据到远程仓库" class="headerlink" title="推送数据到远程仓库"></a>推送数据到远程仓库</h2><p> git push [remote-name][branch-name]</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin master <span class="comment"># 将当前数据推送到origin的master分支</span></span><br></pre></td></tr></table></figure>
+
+<p>由于远程库是空的，我们第一次推送 master 分支时，可以加上了-u 参数，Git 不但会把本地的 master 分支内容推送的远程新的 master 分支，还会把本地的 master 分支和远程的 master 分支关联起来，在以后的推送或者拉取时就可以<code>git push</code>简化命令。</p>
+<h2 id="远程仓库的删除和重命名"><a href="#远程仓库的删除和重命名" class="headerlink" title="远程仓库的删除和重命名"></a>远程仓库的删除和重命名</h2><p>在新版 Git 中可以用 <code>git remote rename</code> 命令修改某个远程仓库在本地的简称，比如想把 origin 改成 github，可以这么运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git remote rename origin github</span><br><span class="line">$ git remote -v</span><br><span class="line">github	git@github.com:love201314/vuex-demo.git (fetch)</span><br><span class="line">github	git@github.com:love201314/vuex-demo.git (push)</span><br></pre></td></tr></table></figure>
+
+<p>碰到远端仓库服务器迁移，或者原来的克隆镜像不再使用，又或者某个参与者不再贡献代码，那么需要移除对应的远端仓库，可以运行 <code>git remote rm</code> 命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote rm gitee <span class="comment"># 删除本地关联的 gitee 仓库</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="使用-gitignore-文件忽略文件"><a href="#使用-gitignore-文件忽略文件" class="headerlink" title="使用 .gitignore 文件忽略文件"></a>使用 .gitignore 文件忽略文件</h2><p>  <code>.gitignore</code>,在这个文件中可以设置要被忽略的文件或者目录。被忽略的文件不会被提交仓储里去</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 此为注释 – 将被 Git 忽略</span></span><br><span class="line">*.a       <span class="comment"># 忽略所有 .a 结尾的文件</span></span><br><span class="line">!lib.a    <span class="comment"># 但 lib.a 除外</span></span><br><span class="line">/TODO     <span class="comment"># 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO</span></span><br><span class="line">build/    <span class="comment"># 忽略 build/ 目录下的所有文件</span></span><br><span class="line">doc/*.txt <span class="comment"># 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</span></span><br></pre></td></tr></table></figure>
+
+<p>.gitignore 中增加了过滤规则但是不起作用的情况。多半是由于在创建.gitignore 文件或添加一些过滤规则之前就 track 了相应的内容，那么即使在.gitignore 文件中写入新的过滤规则，这些规则也不会起作用，Git 仍然会对这些文件进行版本管理。简单来说出现这种问题的原因就是 Git 已经开始管理这些文件了，所以你无法再通过过滤规则过滤它们。 这个时候解决方法就是先把本地这些文件变成未 track 状态，具体来说就是在缓存里删除它们，使用如下命令清楚缓存</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git rm -r --cached</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<li><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">廖雪峰 git</a></li>
+<li><a href="http://iissnan.com/progit/" target="_blank" rel="noopener">Pro Git</a></li>
+</ul>
+
       
     </div>
 
@@ -276,7 +363,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://52kx.github.io/2019/10/29/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://52kx.github.io/2019/07/07/npm-publisher/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -290,7 +377,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/10/29/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+            <a href="/2019/07/07/npm-publisher/" class="post-title-link" itemprop="url">npm 包的发布与删除</a>
         </h1>
 
         <div class="post-meta">
@@ -300,14 +387,356 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-10-29 22:40:45" itemprop="dateCreated datePublished" datetime="2019-10-29T22:40:45+08:00">2019-10-29</time>
+              <time title="创建时间：2019-07-07 20:38:16" itemprop="dateCreated datePublished" datetime="2019-07-07T20:38:16+08:00">2019-07-07</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-05 11:58:43" itemprop="dateModified" datetime="2019-11-05T11:58:43+08:00">2019-11-05</time>
+                <time title="修改时间：2019-10-23 11:29:19" itemprop="dateModified" datetime="2019-10-23T11:29:19+08:00">2019-10-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="注册-npm-账号"><a href="#注册-npm-账号" class="headerlink" title="注册 npm 账号"></a>注册 npm 账号</h2><p>网站 <a href="https://www.npmjs.com/" target="_blank" rel="noopener">https://www.npmjs.com/</a> 注册完成后需要去邮箱验证一下</p>
+<h2 id="电脑本地npm登陆"><a href="#电脑本地npm登陆" class="headerlink" title="电脑本地npm登陆"></a>电脑本地npm登陆</h2><p>打开终端输入命令：npm adduser,依次输入Username、Password、Email,用户名、密码、邮箱都是在npm上注册的。</p>
+<p><img alt data-src="/images/post/20190507114730.png"></p>
+<p>退出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="built_in">logout</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="本地包发布到npm"><a href="#本地包发布到npm" class="headerlink" title="本地包发布到npm"></a>本地包发布到npm</h2><p><strong>注意：</strong> 不能使用淘宝源，发布的包的名字、版本就是项目目录中package.json里面的name和version</p>
+<p>在项目根目录中执行 <code>npm publish</code> 即可发布到 <code>npm</code> 上</p>
+<h2 id="删除上传的包"><a href="#删除上传的包" class="headerlink" title="删除上传的包"></a>删除上传的包</h2><p><strong>注意:</strong> 只有在发包的24小时内才允许撤销发布的包（ unpublish is only allowed with versions published in the last 24 hours）</p>
+<p>在项目根目录下执行如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm unpublish --force</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://52kx.github.io/2019/07/07/iview-problem/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="skx">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="水染天颜">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/07/07/iview-problem/" class="post-title-link" itemprop="url">iview 常见问题</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-07 20:30:30" itemprop="dateCreated datePublished" datetime="2019-07-07T20:30:30+08:00">2019-07-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-21 16:22:31" itemprop="dateModified" datetime="2019-10-21T16:22:31+08:00">2019-10-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="iView常用组件清空技巧"><a href="#iView常用组件清空技巧" class="headerlink" title="iView常用组件清空技巧"></a>iView常用组件清空技巧</h2><p>清空DatePicker（日期选择器）的方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$refs.element.handleClear()</span><br></pre></td></tr></table></figure>
+
+<p>清空TimePicker（时间选择器）的方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$refs.element.handleClear()</span><br></pre></td></tr></table></figure>
+
+<p>清空Select组件的方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$refs.element.clearSingleSelect()</span><br></pre></td></tr></table></figure>
+
+<p>清空Table组件的方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$refs.element.selectAll(flase)</span><br></pre></td></tr></table></figure>
+
+<h2 id="iview的Table中，如果使用render函数渲染Input组件时，Input组件触发change事件时，Input组件会失去焦点。"><a href="#iview的Table中，如果使用render函数渲染Input组件时，Input组件触发change事件时，Input组件会失去焦点。" class="headerlink" title="iview的Table中，如果使用render函数渲染Input组件时，Input组件触发change事件时，Input组件会失去焦点。"></a>iview的Table中，如果使用render函数渲染Input组件时，Input组件触发change事件时，Input组件会失去焦点。</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    title: <span class="string">'备注'</span>,</span><br><span class="line">    key: <span class="string">'remark'</span>,</span><br><span class="line">    render: <span class="function">(<span class="params">h, params</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> h(<span class="string">'Input'</span>, &#123;</span><br><span class="line">            props: &#123;</span><br><span class="line">                size: <span class="string">'small'</span>,</span><br><span class="line">                value: params.row.remark</span><br><span class="line">            &#125;,</span><br><span class="line">            on:&#123;</span><br><span class="line">                <span class="string">'on-change'</span>: <span class="function"><span class="params">event</span> =&gt;</span> &#123;</span><br><span class="line">                    params.row.remark = event.target.value</span><br><span class="line">                    <span class="keyword">this</span>.data2[params.index] = params.row</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://52kx.github.io/2019/07/07/create-react-app-webpack-expand/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="skx">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="水染天颜">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/07/07/create-react-app-webpack-expand/" class="post-title-link" itemprop="url">create-react-app-扩展 webpack 配置</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-07 20:27:39" itemprop="dateCreated datePublished" datetime="2019-07-07T20:27:39+08:00">2019-07-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-21 16:09:35" itemprop="dateModified" datetime="2019-10-21T16:09:35+08:00">2019-10-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add react-app-rewired customize-cra -D</span><br></pre></td></tr></table></figure>
+
+<p>修改 <code>package.json</code> 的 <code>script</code> 脚本</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">        <span class="attr">"start"</span>: <span class="string">"react-app-rewired start"</span>,</span><br><span class="line">        <span class="attr">"build"</span>: <span class="string">"react-app-rewired build"</span>,</span><br><span class="line">        <span class="attr">"test"</span>: <span class="string">"react-app-rewired test"</span>,</span><br><span class="line">        <span class="attr">"eject"</span>: <span class="string">"react-scripts eject"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在项目根目录下创建 <code>config-overrides.js</code> 基本内容如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* config-overrides.js */</span></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> <span class="title">override</span>(<span class="params">config, env</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//do stuff with the webpack config...</span></span><br><span class="line">  <span class="comment">// config 为webpack对象 env 当前环境 development, production</span></span><br><span class="line">  <span class="keyword">return</span> config;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>customize-cra</code> 协助我们自定义 webpack 配置</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* config-overrides.js */</span></span><br><span class="line"><span class="keyword">const</span> &#123; override, fixBabelImports, addWebpackAlias, useEslintRc &#125; = <span class="built_in">require</span>(<span class="string">'customize-cra'</span>)</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="comment">// 使用 stylus</span></span><br><span class="line"><span class="keyword">const</span> rewireStyl = <span class="built_in">require</span>(<span class="string">'react-app-rewire-stylus-modules'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = override(</span><br><span class="line">  <span class="comment">// 使用 customize-cra 配置单独的 eslintrc 文件</span></span><br><span class="line">  useEslintRc(),</span><br><span class="line">  <span class="comment">// 使用 customize-cra 配置 别名</span></span><br><span class="line">  addWebpackAlias(&#123;</span><br><span class="line">    <span class="string">'@'</span>: path.resolve(__dirname, <span class="string">'src'</span>)</span><br><span class="line">  &#125;),</span><br><span class="line">  <span class="comment">// react-app-rewired</span></span><br><span class="line">  (config, env) =&gt; &#123;</span><br><span class="line">    <span class="comment">// 使用 css stylus 预处理器</span></span><br><span class="line">    config = rewireStyl(config, env)</span><br><span class="line">    <span class="keyword">return</span> config</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>更多配置:👇</p>
+<ul>
+<li><a href="https://github.com/arackaf/customize-cra" target="_blank" rel="noopener">customize-cra 文档</a></li>
+<li><a href="https://github.com/timarney/react-app-rewired" target="_blank" rel="noopener">react-app-rewired 文档</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://52kx.github.io/2019/07/07/react-webpack-eslint/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="skx">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="水染天颜">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/07/07/react-webpack-eslint/" class="post-title-link" itemprop="url">create-react-app 自定义 eslint</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-07 20:16:30" itemprop="dateCreated datePublished" datetime="2019-07-07T20:16:30+08:00">2019-07-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-21 16:33:17" itemprop="dateModified" datetime="2019-10-21T16:33:17+08:00">2019-10-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h2><p>使用 vscode 编辑器安装 eslint</p>
+<ol>
+<li><code>npm run eject</code></li>
+<li>删除 <code>package.json</code> 如下配置</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">"eslintConfig": &#123;</span><br><span class="line">    "extends": "react-app"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>在终端中执行 <code>npx eslint --init</code> 选择回答问题的方式即可（此处我选择生成js文件 <code>.eslintrc.js</code>）</li>
+<li>打开生成的 <code>.eslintrc.js</code>, 在 <code>extends</code> 中加入 <code>react-app</code>, 如下:</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  root: <span class="literal">true</span>,</span><br><span class="line">  env: &#123;</span><br><span class="line">    browser: <span class="literal">true</span>,</span><br><span class="line">    es6: <span class="literal">true</span>,</span><br><span class="line">    node: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  extends: [<span class="string">'eslint:recommended'</span>, <span class="string">'react-app'</span>],</span><br><span class="line">  globals: &#123;</span><br><span class="line">    Atomics: <span class="string">'readonly'</span>,</span><br><span class="line">    SharedArrayBuffer: <span class="string">'readonly'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  parserOptions: &#123;</span><br><span class="line">    ecmaFeatures: &#123;</span><br><span class="line">      jsx: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    ecmaVersion: <span class="number">2018</span>,</span><br><span class="line">    sourceType: <span class="string">'module'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [<span class="string">'react'</span>],</span><br><span class="line">  rules: &#123;</span><br><span class="line">    indent: [<span class="string">'error'</span>, <span class="number">2</span>],</span><br><span class="line">    <span class="string">'linebreak-style'</span>: [<span class="string">'error'</span>, <span class="string">'windows'</span>],</span><br><span class="line">    quotes: [<span class="string">'error'</span>, <span class="string">'single'</span>],</span><br><span class="line">    semi: [<span class="string">'error'</span>, <span class="string">'never'</span>],</span><br><span class="line">    <span class="string">'no-console'</span>: process.env.NODE_ENV === <span class="string">'production'</span> ? <span class="string">'error'</span> : <span class="string">'off'</span>,</span><br><span class="line">    <span class="string">'no-debugger'</span>: process.env.NODE_ENV === <span class="string">'production'</span> ? <span class="string">'error'</span> : <span class="string">'off'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用-prettier"><a href="#使用-prettier" class="headerlink" title="使用 prettier"></a>使用 prettier</h2><p><code>perttier</code> 可以看作是 eslint 的一个插件， 所有的代码样式规范有 <code>prettier</code> 接管</p>
+<p>安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add prettier eslint-plugin-prettier -D</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>.eslintrc.js</code> 的 <code>plugin</code> 中加入如下代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plugins: [<span class="string">'react'</span>, <span class="string">'prettier'</span>]</span><br></pre></td></tr></table></figure>
+
+<p>根目录创建 <code>prettier.config.js</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  semi: <span class="literal">false</span>, <span class="comment">// 禁止分号</span></span><br><span class="line">  singleQuote: <span class="literal">true</span>, <span class="comment">// 使用单引号</span></span><br><span class="line">  jsxSingleQuote: <span class="literal">true</span>, <span class="comment">// jsx中使用单引号</span></span><br><span class="line">  tabWidth: <span class="number">2</span>, <span class="comment">// tab 使用两个空格</span></span><br><span class="line">  useTabs: <span class="literal">false</span>, <span class="comment">// 不适用tab</span></span><br><span class="line">  endOfLine: <span class="string">'crlf'</span>, <span class="comment">// 换行符</span></span><br><span class="line">  bracketSpacing: <span class="literal">true</span> <span class="comment">// &#123;a:1&#125; =&gt; &#123; a: 1 &#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>将 <code>.eslintrc.js</code> 的 <code>rules</code> 将有关代码样式的规则删除，并添加如下代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'prettier/prettier'</span>: <span class="string">'error'</span>, <span class="comment">// prettier 标记的地方显示错误</span></span><br><span class="line"><span class="string">'no-console'</span>: process.env.NODE_ENV === <span class="string">'production'</span> ? <span class="string">'error'</span> : <span class="string">'off'</span>,</span><br><span class="line"><span class="string">'no-debugger'</span>: process.env.NODE_ENV === <span class="string">'production'</span> ? <span class="string">'error'</span> : <span class="string">'off'</span></span><br></pre></td></tr></table></figure>
+
+<p>使用 .eslintignore 忽略检查的文件夹 只检查src目录下的文件</p>
+<h4 id="eslintrc-js-完整配置"><a href="#eslintrc-js-完整配置" class="headerlink" title=".eslintrc.js 完整配置"></a>.eslintrc.js 完整配置</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  root: <span class="literal">true</span>,</span><br><span class="line">  env: &#123;</span><br><span class="line">    browser: <span class="literal">true</span>,</span><br><span class="line">    es6: <span class="literal">true</span>,</span><br><span class="line">    node: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  extends: [<span class="string">'eslint:recommended'</span>, <span class="string">'react-app'</span>],</span><br><span class="line">  globals: &#123;</span><br><span class="line">    Atomics: <span class="string">'readonly'</span>,</span><br><span class="line">    SharedArrayBuffer: <span class="string">'readonly'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  parserOptions: &#123;</span><br><span class="line">    ecmaFeatures: &#123;</span><br><span class="line">      jsx: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    ecmaVersion: <span class="number">2018</span>,</span><br><span class="line">    sourceType: <span class="string">'module'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [<span class="string">'react'</span>, <span class="string">'prettier'</span>],</span><br><span class="line">  rules: &#123;</span><br><span class="line">    <span class="string">'prettier/prettier'</span>: <span class="string">'error'</span>,</span><br><span class="line">    <span class="string">'no-console'</span>: process.env.NODE_ENV === <span class="string">'production'</span> ? <span class="string">'error'</span> : <span class="string">'off'</span>,</span><br><span class="line">    <span class="string">'no-debugger'</span>: process.env.NODE_ENV === <span class="string">'production'</span> ? <span class="string">'error'</span> : <span class="string">'off'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="prettier-config-js-完整配置"><a href="#prettier-config-js-完整配置" class="headerlink" title="prettier.config.js 完整配置"></a>prettier.config.js 完整配置</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  semi: <span class="literal">false</span>, <span class="comment">// 禁止分号</span></span><br><span class="line">  formatOnSave: <span class="literal">true</span>, <span class="comment">// 保存格式化</span></span><br><span class="line">  singleQuote: <span class="literal">true</span>, <span class="comment">// 使用单引号</span></span><br><span class="line">  jsxSingleQuote: <span class="literal">false</span>, <span class="comment">// jsx中使用双引号</span></span><br><span class="line">  tabWidth: <span class="number">2</span>, <span class="comment">// tab 使用两个空格</span></span><br><span class="line">  useTabs: <span class="literal">false</span>, <span class="comment">// 不适用tab</span></span><br><span class="line">  endOfLine: <span class="string">'crlf'</span>, <span class="comment">// 换行符</span></span><br><span class="line">  bracketSpacing: <span class="literal">true</span> <span class="comment">// &#123;a:1&#125; =&gt; &#123; a: 1 &#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-aribnb"><a href="#使用-aribnb" class="headerlink" title="使用 aribnb"></a>使用 aribnb</h3><p>安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add eslint-config-airbnb -D</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>.eslintrc.js</code> 中添加如下配置</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">extends: [<span class="string">'airbnb'</span>],</span><br></pre></td></tr></table></figure>
+
+<h3 id="检查-git-提交的代码"><a href="#检查-git-提交的代码" class="headerlink" title="检查 git 提交的代码"></a>检查 git 提交的代码</h3><p><code>package.json</code> 中添加如下脚本</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"lint"</span>: <span class="string">"eslint --ext .js,.jsx src"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>安装 pre-commit </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add pre-commit -D</span><br></pre></td></tr></table></figure>
+
+<p>在 package.json 中配置中添加如下配置</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"pre-commit"</span>: [</span><br><span class="line">    <span class="string">"lint"</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里的 lint 对应第 1 步中增加的脚本命令名。<br>完成之后，在每次提交代码之前，pre-commit 都会拦截 Git 的 commit 操作，然后运行 lint 命令进行代码检测，若检测到有违反校验规则的情况，则会返回错误，从而导致 git commit 失败。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://52kx.github.io/2019/04/11/ES6%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="skx">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="水染天颜">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/04/11/ES6%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">ES6基础</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-04-11 02:02:13" itemprop="dateCreated datePublished" datetime="2019-04-11T02:02:13+08:00">2019-04-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-23 15:28:07" itemprop="dateModified" datetime="2019-10-23T15:28:07+08:00">2019-10-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -315,8 +744,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
                   </a>
                 </span>
             </span>
@@ -332,19 +761,476 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+          <p>完整教程在<a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">ECMASCRIPT 6 入门</a></p>
+<h2 id="新的变量声明方式let和const"><a href="#新的变量声明方式let和const" class="headerlink" title="新的变量声明方式let和const"></a>新的变量声明方式<code>let</code>和<code>const</code></h2><blockquote>
+<p>与 var 不同，新的变量声明方式带来了一些不一样的特性，其中最重要的两个特性就是提供了块级作用域与不再具备变量提升</p>
+</blockquote>
+<h3 id="let-主要特征"><a href="#let-主要特征" class="headerlink" title="let 主要特征"></a><code>let</code> 主要特征</h3><ul>
+<li>不存在变量提升的问题，只有定义之后才能使用</li>
+<li>有块级作用域<code>{ }</code></li>
+</ul>
+<h3 id="const-主要特征"><a href="#const-主要特征" class="headerlink" title="const 主要特征"></a><code>const</code> 主要特征</h3><ul>
+<li>const 定义为常量，<strong>无法被重新赋值</strong></li>
+<li>定义常量，必须初始化，否则会报错</li>
+<li>不存在变量提升的问题，只有定义之后才能使用</li>
+<li>有块级作用域<code>{ }</code></li>
+</ul>
+<h2 id="变量的结构赋值"><a href="#变量的结构赋值" class="headerlink" title="变量的结构赋值"></a>变量的结构赋值</h2><blockquote>
+<p>所谓的解构赋值，就是把 某个对象中的属性，当作变量，给解放出来，这样，今后就能够当作变量直接使用了</p>
+</blockquote>
+<p>可以使用 <code>:</code> 为解构出来的变量重命名</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name: <span class="string">'xsyd'</span>,</span><br><span class="line">  age: <span class="number">23</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> &#123; <span class="attr">name</span>: myname, age &#125; = person</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(myname) <span class="comment">// xsyd</span></span><br><span class="line"><span class="built_in">console</span>.log(age) <span class="comment">// 23</span></span><br><span class="line"><span class="built_in">console</span>.log(name) <span class="comment">// name is not defined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="keyword">let</span> [a, b, c] = arr</span><br><span class="line"><span class="built_in">console</span>.log(a, b, c) <span class="comment">// 1 2 3</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><blockquote>
+<p>箭头函数，本质上就是一个匿名函数</p>
+</blockquote>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">形式参数 =&gt; &#123;</span><br><span class="line">    函数体代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h3 id="箭头函数的特征"><a href="#箭头函数的特征" class="headerlink" title="箭头函数的特征"></a>箭头函数的特征</h3><p>箭头函数内部的<code>this</code>, 永远和箭头函数外部的<code>this</code>保持一致</p>
+<h3 id="箭头函数变体"><a href="#箭头函数变体" class="headerlink" title="箭头函数变体"></a>箭头函数变体</h3><p>如果箭头函数，左侧的形参列表中，只有一个参数，则，左侧小括号可以省略</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports.add = <span class="function"><span class="params">x</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> x + <span class="number">10</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>如果右侧函数体中，只有一行代码，则，右侧的 <code>{ }</code> 可以省略</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports.add = <span class="function">(<span class="params">x, y</span>) =&gt;</span> <span class="keyword">return</span> x + y</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p>如果箭头函数左侧 只有一个 形参，而且右侧只有一行代码，则 两边的 <code>()</code> 和 <code>{}</code> 都可以省略</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports.add = <span class="function"><span class="params">x</span> =&gt;</span> x + <span class="number">10</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>：如果我们省略了 右侧函数体的 <code>{ }</code>，那么，默认会把 右侧函数体中代码的执行结果，当作箭头函数的调用结果 return 出去</p>
+<h2 id="为函数参数指定默认值"><a href="#为函数参数指定默认值" class="headerlink" title="为函数参数指定默认值"></a>为函数参数指定默认值</h2><p>之前我们不能直接为函数指定默认参数，因此很多时候为了保证传入的参数具备一个默认值，我们常常使用如下的方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x = x || <span class="number">20</span></span><br><span class="line">  <span class="keyword">var</span> y = y || <span class="number">30</span></span><br><span class="line">  <span class="keyword">return</span> x + y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这种方式并不是没有缺点，比如当我传入一个 x 值为 false，这个时候任然会取到默认值，就不是我们的本意了。es6 新增函数参数默认值写法:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x = <span class="number">20</span>, y = <span class="number">30</span></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x + y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="展开运算符"><a href="#展开运算符" class="headerlink" title="展开运算符 ..."></a>展开运算符 <code>...</code></h2><blockquote>
+<p><strong>展开语法</strong>(Spread syntax), 可以在函数调用/数组构造时, 将数组表达式或者 string 在语法层面展开；还可以在构造字面量对象时, 将对象表达式按 key-value 的方式展开</p>
+</blockquote>
+<h3 id="在函数调用时使用展开语法"><a href="#在函数调用时使用展开语法" class="headerlink" title="在函数调用时使用展开语法"></a>在函数调用时使用展开语法</h3><p>等价于<code>apply</code>的方式<br>如果想将数组元素迭代为函数参数，一般使用 Function.prototype.apply 的方式进行调用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">x, y, z</span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> args = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">myFunction.apply(<span class="literal">null</span>, args)</span><br></pre></td></tr></table></figure>
+
+<p>有了展开语法，可以这样写：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">x, y, z</span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> args = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">myFunction(...args)</span><br></pre></td></tr></table></figure>
+
+<h3 id="在-new-表达式中应用"><a href="#在-new-表达式中应用" class="headerlink" title="在 new 表达式中应用"></a>在 new 表达式中应用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dateFields = [<span class="number">1970</span>, <span class="number">0</span>, <span class="number">1</span>] <span class="comment">// 1970年1月1日</span></span><br><span class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>（... dateFields）</span><br></pre></td></tr></table></figure>
+
+<h3 id="构造字面量数组时使用展开语法"><a href="#构造字面量数组时使用展开语法" class="headerlink" title="构造字面量数组时使用展开语法"></a>构造字面量数组时使用展开语法</h3><p>没有展开语法的时候，只能组合使用 <code>push</code>，<code>splice</code>，<code>concat</code> 等方法，来将已有数组元素变成新数组的一部分。有了展开语法, 通过字面量方式, 构造新数组会变得更简单、更优雅：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> parts = [<span class="string">'shoulders'</span>, <span class="string">'knees'</span>]</span><br><span class="line"><span class="keyword">var</span> lyrics = [<span class="string">'head'</span>, ...parts, <span class="string">'and'</span>, <span class="string">'toes'</span>] <span class="comment">// ["head", "shoulders", "knees", "and", "toes"]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="拷贝数组"><a href="#拷贝数组" class="headerlink" title="拷贝数组"></a>拷贝数组</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="keyword">var</span> arr2 = [...arr] <span class="comment">// like arr.slice()</span></span><br><span class="line">arr2.push(<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// arr2 此时变成 [1, 2, 3, 4]</span></span><br><span class="line"><span class="comment">// arr 不受影响</span></span><br><span class="line"><span class="comment">// 执行的是浅拷贝（只遍历一层）</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="构造字面量对象时使用展开语法"><a href="#构造字面量对象时使用展开语法" class="headerlink" title="构造字面量对象时使用展开语法"></a>构造字面量对象时使用展开语法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123; <span class="attr">foo</span>: <span class="string">'bar'</span>, <span class="attr">x</span>: <span class="number">42</span> &#125;</span><br><span class="line"><span class="keyword">var</span> obj2 = &#123; <span class="attr">foo</span>: <span class="string">'baz'</span>, <span class="attr">y</span>: <span class="number">13</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> clonedObj = &#123; ...obj1 &#125;</span><br><span class="line"><span class="comment">// 克隆后的对象: &#123; foo: "bar", x: 42 &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> mergedObj = &#123; ...obj1, ...obj2 &#125;</span><br><span class="line"><span class="comment">// 合并后的对象: &#123; foo: "baz", x: 42, y: 13 &#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Spread_syntax" target="_blank" rel="noopener">MDN</a> 文档</p>
+<br>
+
+<h2 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/template_strings" target="_blank" rel="noopener">MDN</a></p>
+<blockquote>
+<p>模板字符串使用反引号来代替普通字符串中的用双引号和单引号。模板字符串可以包含特定语法（${expression}）的占位符。占位符中的表达式和周围的文本会一起传递给一个默认函数，该函数负责将所有的部分连接起来，如果一个模板字符串由表达式开头，则该字符串被称为带标签的模板字符串，该表达式通常是一个函数，它会在模板字符串处理后被调用，在输出最终结果前，你都可以通过该函数来对模板字符串进行操作处理。在模版字符串内使用反引号时，需要在它前面加转义符（\）。</p>
+</blockquote>
+<h3 id="多行字符串"><a href="#多行字符串" class="headerlink" title="多行字符串"></a>多行字符串</h3><p>在新行中插入的任何字符都是模板字符串中的一部分，使用普通字符串，你可以通过以下的方式获得多行字符串：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'string text line 1\n'</span> + <span class="string">'string text line 2'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>要获得同样效果的多行字符串，使用模板字符串只需使用如下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">`string text line 1</span></span><br><span class="line"><span class="string">string text line 2`</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="插入表达式"><a href="#插入表达式" class="headerlink" title="插入表达式"></a>插入表达式</h3><p>在普通字符串中嵌入表达式，必须使用如下语法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">5</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="number">10</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Fifteen is '</span> + (a + b) + <span class="string">' and\nnot '</span> + (<span class="number">2</span> * a + b) + <span class="string">'.'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>现在通过模板字符串，我们可以使用一种更优雅的方式来表示：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">5</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="number">10</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`Fifteen is <span class="subst">$&#123;a + b&#125;</span> and</span></span><br><span class="line"><span class="string">not <span class="subst">$&#123;<span class="number">2</span> * a + b&#125;</span>.`</span>)</span><br></pre></td></tr></table></figure>
+
+<p>注意:</p>
+<ol>
+<li>如果使用模版字符串表示多行字符串，所有的空格和缩进都会被保存在输出中！！</li>
+<li>在<code>${}</code>中的大括号里可以放入任意的 JavaScript 表达式，还可以进行运算，以及引用对象属性。</li>
+<li>模版字符串<code>${}</code>中还可以调用函数</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://52kx.github.io/2019/02/26/yarn%E6%9B%B4%E6%8D%A2%E4%B8%BA%E9%98%BF%E9%87%8C%E6%BA%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="skx">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="水染天颜">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/02/26/yarn%E6%9B%B4%E6%8D%A2%E4%B8%BA%E9%98%BF%E9%87%8C%E6%BA%90/" class="post-title-link" itemprop="url">yarn更换为阿里源</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-02-26 23:06:35" itemprop="dateCreated datePublished" datetime="2019-02-26T23:06:35+08:00">2019-02-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-22 10:07:16" itemprop="dateModified" datetime="2019-10-22T10:07:16+08:00">2019-10-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="为什么要更改源"><a href="#为什么要更改源" class="headerlink" title="为什么要更改源"></a>为什么要更改源</h2><p>查看默认的源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn config get registry</span><br></pre></td></tr></table></figure>
+
+<p>yarn 默认的源在国外，下载速度比较慢，我们推荐使用阿里旗下的<a href="https://registry.npm.taobao.org/" target="_blank" rel="noopener">淘宝镜像源</a></p>
+<h2 id="如何更改"><a href="#如何更改" class="headerlink" title="如何更改"></a>如何更改</h2><h3 id="临时更改"><a href="#临时更改" class="headerlink" title="临时更改"></a>临时更改</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add 软件名 --registry https://registry.npm.taobao.org/</span><br></pre></td></tr></table></figure>
+
+<h3 id="全局修改"><a href="#全局修改" class="headerlink" title="全局修改"></a>全局修改</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn config <span class="built_in">set</span> registry https://registry.npm.taobao.org/</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-yrm-快速切换镜像源"><a href="#使用-yrm-快速切换镜像源" class="headerlink" title="使用 yrm 快速切换镜像源"></a>使用 yrm 快速切换镜像源</h3><p>安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn global add yrm</span><br></pre></td></tr></table></figure>
+
+<p>查看所有可用的镜像源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ yrm ls</span><br><span class="line">  npm ---- https://registry.npmjs.org/</span><br><span class="line">  cnpm --- http://r.cnpmjs.org/</span><br><span class="line">  taobao - https://registry.npm.taobao.org/</span><br><span class="line">  nj ----- https://registry.nodejitsu.com/</span><br><span class="line">  rednpm - http://registry.mirror.cqupt.edu.cn/</span><br><span class="line">  npmMirror  https://skimdb.npmjs.com/registry/</span><br><span class="line">  edunpm - http://registry.enpmjs.org/</span><br><span class="line">* yarn --- https://registry.yarnpkg.com</span><br></pre></td></tr></table></figure>
+
+<p>使用淘宝镜像</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ yrm use taobao</span><br><span class="line">  YARN Registry has been <span class="built_in">set</span> to: https://registry.npm.taobao.org/</span><br><span class="line">  NPM Registry has been <span class="built_in">set</span> to: https://registry.npm.taobao.org/</span><br></pre></td></tr></table></figure>
+
+<p>测试访问速度</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ yrm <span class="built_in">test</span> taobao</span><br><span class="line">* taobao - 1529ms</span><br></pre></td></tr></table></figure>
+
+<p>更多详细信息请移步<a href="https://github.com/i5ting/yrm" target="_blank" rel="noopener">GitHub</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://52kx.github.io/2019/02/26/react-cli-css-prev/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="skx">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="水染天颜">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/02/26/react-cli-css-prev/" class="post-title-link" itemprop="url">react脚手架项目添加css预处理器支持</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-02-26 22:42:44" itemprop="dateCreated datePublished" datetime="2019-02-26T22:42:44+08:00">2019-02-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-22 10:07:03" itemprop="dateModified" datetime="2019-10-22T10:07:03+08:00">2019-10-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>create-react-app v2.1.3</p>
+</blockquote>
+<h2 id="添加-scss-支持"><a href="#添加-scss-支持" class="headerlink" title="添加 scss 支持"></a>添加 scss 支持</h2><p>项目默认支持 scss，</p>
+<h2 id="添加-less-支持"><a href="#添加-less-支持" class="headerlink" title="添加 less 支持"></a>添加 less 支持</h2><p>将项目的配置文件暴露出来</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn eject</span><br></pre></td></tr></table></figure>
+
+<p>安装 less 和 less-loader</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add less less-loader</span><br></pre></td></tr></table></figure>
+
+<p>修改 <code>package.json</code>  文件如下</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">"transformIgnorePatterns": [</span><br><span class="line">   "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",</span><br><span class="line">   <span class="string">"^.+\\.module\\.(css|sass|scss|less)$"</span></span><br><span class="line"> ],</span><br><span class="line">"moduleNameMapper": &#123;</span><br><span class="line">  "^react-native$": "react-native-web",</span><br><span class="line">  "^.+\\.module\\.(css|sass|scss|less)$": "identity-obj-proxy"</span><br><span class="line">&#125;,</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>修改 <code>webpack.config.js</code> 文件,在 <code>module</code> 中找到 <code>scss</code> 的规则并在底下添加 <code>less</code> 规则</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="keyword">const</span> cssRegex = <span class="regexp">/\.css$/</span></span><br><span class="line"><span class="keyword">const</span> cssModuleRegex = <span class="regexp">/\.module\.css$/</span></span><br><span class="line"><span class="keyword">const</span> sassRegex = <span class="regexp">/\.(scss|sass)$/</span></span><br><span class="line"><span class="keyword">const</span> sassModuleRegex = <span class="regexp">/\.module\.(scss|sass)$/</span></span><br><span class="line"><span class="comment">// 需要添加的内容</span></span><br><span class="line"><span class="keyword">const</span> lessRegex = <span class="regexp">/\.less$/</span></span><br><span class="line"><span class="keyword">const</span> lessModuleRegex = <span class="regexp">/\.module\.less$/</span></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line">&#123;</span><br><span class="line">  test: lessRegex,</span><br><span class="line">  exclude: lessModuleRegex,</span><br><span class="line">  use: getStyleLoaders(</span><br><span class="line">    &#123;</span><br><span class="line">      importLoaders: <span class="number">2</span>,</span><br><span class="line">      sourceMap: isEnvProduction</span><br><span class="line">      ? shouldUseSourceMap</span><br><span class="line">      : isEnvDevelopment,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'less-loader'</span></span><br><span class="line">  ),</span><br><span class="line">  sideEffects: <span class="literal">true</span>,</span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">  test: lessModuleRegex,</span><br><span class="line">  use: getStyleLoaders(</span><br><span class="line">    &#123;</span><br><span class="line">      importLoaders: <span class="number">2</span>,</span><br><span class="line">      sourceMap: isEnvProduction</span><br><span class="line">      ? shouldUseSourceMap</span><br><span class="line">      : isEnvDevelopment,</span><br><span class="line">      modules: <span class="literal">true</span>,</span><br><span class="line">      getLocalIdent: getCSSModuleLocalIdent,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'less-loader'</span></span><br><span class="line">  )</span><br><span class="line">&#125;,</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://52kx.github.io/2018/11/20/es6-promise/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="skx">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="水染天颜">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/11/20/es6-promise/" class="post-title-link" itemprop="url">es6-promise</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-11-20 15:43:56" itemprop="dateCreated datePublished" datetime="2018-11-20T15:43:56+08:00">2018-11-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-21 16:14:15" itemprop="dateModified" datetime="2019-10-21T16:14:15+08:00">2019-10-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><h3 id="new-Promise-function-resolve-reject-…-executor"><a href="#new-Promise-function-resolve-reject-…-executor" class="headerlink" title="new Promise( function(resolve, reject) {…} /_ executor _/ );"></a>new Promise( function(resolve, reject) {…} /_ executor _/ );</h3><p>下面看一段 promise 的示例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// resolve 是成功后的回调函数，通常的做法是将异步操作成功的结果作为参数传递给resolve</span></span><br><span class="line">    resolve(<span class="string">'ok'</span>)</span><br><span class="line">  &#125;, <span class="number">1000</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">p.then(<span class="function"><span class="params">res</span> =&gt;</span> <span class="built_in">console</span>.log(res)) <span class="comment">// 输出ok</span></span><br></pre></td></tr></table></figure>
+
+<p>注意： 上面的代码，只是 new 了一个 Promise 对象，并没有调用就执行了。我们一般是封装成一个函数，在需要的时候去调用这个函数</p>
+<p>一个 Promise 有以下几种状态:</p>
+<ul>
+<li>pending: 初始状态，既不是成功，也不是失败状态。</li>
+<li>fulfilled: 意味着操作成功完成。</li>
+<li>rejected: 意味着操作失败。</li>
+</ul>
+<p>Promise 的构造函数接受一个参数，是函数；并且传入两个参数：resolve,reject，分别表示异步操作执行成功后的回调函数和异步操作执行失败后的回调函数。resolve 和 reject 函数被调用时，分别将 promise 的状态改为 fulfilled（完成）或 rejected（失败）</p>
+<p>p 对象调用了 then 方法并传入了一个箭头函数，箭头函数的参数就是执行异步操作成功后的结果,then 方法可以传入两个回调函数，第一个处理执行异步成功的回调函数，第二个处理异步执行失败的回调函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">p.then(</span><br><span class="line">  res =&gt; &#123;</span><br><span class="line">    <span class="comment">// 处理 resolve</span></span><br><span class="line">  &#125;,</span><br><span class="line">  err =&gt; &#123;</span><br><span class="line">    <span class="comment">// 处理reject</span></span><br><span class="line">  &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h2 id="promise-链式操作"><a href="#promise-链式操作" class="headerlink" title="promise 链式操作"></a>promise 链式操作</h2><p>使用 Promise 分装一个文件读取的方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getFileByPath</span>(<span class="params">path</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    fs.readFile(path, <span class="string">'utf-8'</span>, (err, data) =&gt; &#123;</span><br><span class="line">      <span class="keyword">if</span> (err) <span class="keyword">return</span> reject(err)</span><br><span class="line">      resolve(data)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>有这样一个需求，当文件 1 读取成功的时候才能读取文件 2，我们可以这样编码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">getFileByPath(<span class="string">'/user/admin/desktop/file/1.txt'</span>)</span><br><span class="line">  .then(</span><br><span class="line">    res =&gt; &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(res) <span class="comment">// 文件1的内容</span></span><br><span class="line">      <span class="comment">// 继续读取文件2, 我们并不是直接在方法后面调用 then 而是使用rerturn将其返回，在外面继续调用 then 实现链式编程，并且避免了回调地狱</span></span><br><span class="line">      <span class="keyword">return</span> getFileByPath(<span class="string">'/user/admin/desktop/file/2.txt'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    err =&gt; <span class="built_in">console</span>.log(<span class="string">'读取失败了'</span>)</span><br><span class="line">  )</span><br><span class="line">  .then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res) <span class="comment">// 文件2的内容</span></span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="catch-的用法"><a href="#catch-的用法" class="headerlink" title="catch 的用法"></a>catch 的用法</h2><p>Promise 对象的错误具有“冒泡”性质，会一直向后传递，直到被捕获为止。也就是说，错误总是会被下一个 catch 语句捕获。注意：因此无法知道错误是哪个 Promise 产生的，除非设置了不一样的错误提示。</p>
+<p>一般，不要在 then 方法中定义 Rejected 状态的回调函数（即 then 的第二个参数），而应该总是使用 catch。</p>
+<p>如果没有使用 catch 方法指定错误处理的回调函数，Promise 对象抛出的错误不会传递到外层代码，即不会有任何反应。</p>
+<p>catch 方法返回的还是一个 Promise 对象，因此还可以接着调用 then 方法。</p>
+<p>如果没有报错，则会跳过 catch 方法，继续执行后面的 then 方法（如果后面还有 then 方法的话）。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">getFileByPath(<span class="string">'/user/admin/desktop/file/1.txt'</span>)</span><br><span class="line">  .then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res) <span class="comment">// 文件1的内容</span></span><br><span class="line">    <span class="comment">// 此处22.txt 不存在</span></span><br><span class="line">    <span class="keyword">return</span> getFileByPath(<span class="string">'/user/admin/desktop/file/22.txt'</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res) <span class="comment">// 文件2的内容</span></span><br><span class="line">    <span class="keyword">return</span> getFileByPath(<span class="string">'/user/admin/desktop/file/3.txt'</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res) <span class="comment">// 文件3的内容</span></span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.log(err))</span><br></pre></td></tr></table></figure>
+
+<p>上面的代码因为并没有读取到文件 22.txt 所以直接跳过下面的 then ，直接调用 catch 方法所以最终的结果是输出了文件 1 的内容和 catch 中的错误信息</p>
+<h2 id="使用-es7-的-async-和-await"><a href="#使用-es7-的-async-和-await" class="headerlink" title="使用 es7 的 async 和 await"></a>使用 es7 的 async 和 await</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">;<span class="function">(<span class="params"><span class="keyword">async</span> (</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> [err, res] = <span class="keyword">await</span> getFileByPath(<span class="string">'/user/admin/desktop/file/22.txt'</span>)</span><br><span class="line">  <span class="keyword">if</span> (err) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">console</span>.log(<span class="string">'出错了'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(res)</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://52kx.github.io/2018/11/20/%E7%A7%BB%E5%8A%A8%E7%AB%AF-%E7%82%B9%E9%80%8F%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="skx">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="水染天颜">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/11/20/%E7%A7%BB%E5%8A%A8%E7%AB%AF-%E7%82%B9%E9%80%8F%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">移动端-点透问题解决方法</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-11-20 15:43:56" itemprop="dateCreated datePublished" datetime="2018-11-20T15:43:56+08:00">2018-11-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-21 16:36:45" itemprop="dateModified" datetime="2019-10-21T16:36:45+08:00">2019-10-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="什么是点透"><a href="#什么是点透" class="headerlink" title="什么是点透"></a>什么是点透</h2><p>当 A/B 两个层上下 z 轴重叠，上层的 A 点击后<strong>消失</strong>或<strong>移开</strong>，并且 B 元素本身有默认 click 事件（如 a 标签）或绑定了 click 事件。在这种情况下，点击 A/B 重叠的部分，就会出现点透的现象。(抄别人的 😂)</p>
+<h2 id="点透的原因"><a href="#点透的原因" class="headerlink" title="点透的原因"></a>点透的原因</h2><p>事件的触发顺序为: <code>touchstart =&gt; touchmove =&gt; touchend =&gt; click</code> 亦即 click 的触发是有延迟的，这个时间大概在 300ms 左右。</p>
+<p>当手指触摸到屏幕的时候，系统生成两个事件，一个是 touch 一个是 click，touch 先执行，touch 执行完成后，A 从 DOM 树上面消失了，而且由于移动端 click 还有延迟 300ms 左右的关系，当系统要触发 click 的时候，发现在用户点击的位置上面，目前离用户最近的元素是 B，所以就直接把 click 事件作用在 B 元素上面了。</p>
+<h2 id="解决点透的方式"><a href="#解决点透的方式" class="headerlink" title="解决点透的方式"></a>解决点透的方式</h2><p><strong>方法一: 使用<code>github</code>上的第三方开源<a href="https://github.com/ftlabs/fastclick" target="_blank" rel="noopener">fastclick</a>库解决</strong></p>
+<p>引入<code>fastclick.js</code>, 原生 js 直接添加如下代码:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(</span><br><span class="line">  <span class="string">'load'</span>,</span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    FastClick.attach(<span class="built_in">document</span>.body)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="literal">false</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p><code>JQuery</code>或<code>Zepto</code> 加上如下代码:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  FastClick.attach(<span class="built_in">document</span>.body)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>当然 require 的话就这样:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> FastClick = <span class="built_in">require</span>(<span class="string">'fastclick'</span>)</span><br><span class="line">FastClick.attach(<span class="built_in">document</span>.body, options)</span><br></pre></td></tr></table></figure>
+
+<p><strong>方法二: 用 touchend 代替 tap 事件并阻止掉 touchend 的默认行为 preventDefault()</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'ele'</span>).on(<span class="string">'touchend'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// TODO</span></span><br><span class="line">  e.preventDefault()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>方法三: 延迟<code>300ms+</code></strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'ele'</span>).on(<span class="string">'tap'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// TODO</span></span><br><span class="line">  &#125;, <span class="number">340</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>注: <code>zepto</code> 的 tap 事件是有点透问题的，但是最新版的 zepto 已经修复了这个问题。</p>
 
       
     </div>
@@ -363,6 +1249,9 @@
   </div>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -407,17 +1296,21 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">分类</span>
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">标签</span>
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
